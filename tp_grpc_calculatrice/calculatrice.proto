@@ -1,0 +1,22 @@
+syntax ="proto3";
+package todoPackage;
+
+service calculatrice
+{
+    rpc addition(calculItem) returns (ResItem);
+    rpc division(calculItem) returns (ResItem);
+    rpc multiplication(calculItem) returns (ResItem);
+    rpc soustraction(calculItem) returns (ResItem);
+}
+    message noparams{}
+
+    message calculItem{
+        int32 firstinput=1;
+        int32 secondinput=2;
+    }
+
+   message ResItem{
+       float resultat=1;
+       string message=2;
+       
+   }

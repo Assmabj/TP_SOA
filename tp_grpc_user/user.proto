@@ -1,0 +1,23 @@
+syntax ="proto3";
+package todoPackage;
+
+service User
+{
+    rpc createUser(UserItem) returns (UserItem);
+    rpc deleteUser(UserItem) returns (UserItems);
+     rpc updateUser(UserItem) returns (UserItems);
+    rpc readUsers(noparams) returns (UserItems);
+}
+    message noparams{}
+    
+    message UserItem{
+        int32 id=1;
+        string firstname=2;
+         string lastname=3;
+    }
+
+
+   message UserItems{
+       repeated UserItem items=1;
+       
+   }
